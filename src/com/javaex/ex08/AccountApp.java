@@ -19,7 +19,7 @@ public class AccountApp {
             System.out.println("----------------------------------");
             System.out.print("선택>");
             
-            int menuNo = sc.nextInt();
+            int menuNo = sc.nextInt(); // 메뉴선택번호
             
             switch(menuNo){
             

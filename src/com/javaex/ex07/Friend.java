@@ -48,7 +48,7 @@ public class Friend {
 		System.out.println("----------------------");
 	}
 	public void showInfo1() {
-		System.out.println("이름 :" + name + "핸드폰 :" + hp + "학교 :" + school);
+		System.out.println("이름: " + name + "   핸드폰: " + hp + "   학교: " + school);
 	}
 
 }
