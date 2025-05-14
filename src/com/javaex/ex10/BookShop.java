@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class BookShop {
 
 	public static void main(String[] args) {
+		//Book 배열 생성 및 초기화
 		Book[] books = new Book[10];
-
 		books[0] = new Book(1, "트와일라잇", "스테파니메이어");
 		books[1] = new Book(2, "뉴문", "스테파니메이어");
 		books[2] = new Book(3, "이클립스", "스테파니메이어");
@@ -18,34 +18,33 @@ public class BookShop {
 		books[8] = new Book(9, "태백산맥", "조정래");
 		books[9] = new Book(10, "풀하우스", "원수연");
 
+		// 도서 정보 출력		
 		System.out.println("*****도서 정보 출력하기******");
-		for (int i = 0; i < books.length; i++) {
-			books[i].print();
-		}
-
+		displayBookInfo(books);
+		
+		// 책 대여요청
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("");
 		System.out.print("대여 하고 싶은 책의 번호를 입력하세요:");
-		// (1) 입력된 번호에 맞는 책을 찾아 대여 되었음(상태코드=0)을 체크 합니다.
-		// 코드작성
-		int num = scanner.nextInt();
-		for (int i = 0; i < books.length; i++) {
-			if (books[i].getBookNo() == num) {
-				books[i].rent();
+		int num = scanner.nextInt(); // 숫자 입력
+		
+		// 입력된 번호의 책 대여처리
+		for (int i = 0; i < books.length; i++) { // 책 배열의 하나씩 차례대로 확인
+			if (books[i].getBookNo() == num) { // 책 번호를 입력한 번호와 같은지 확인
+				books[i].rent(); // 찾은 책에 대해서 rent 메소드호출 기본값 1을 0으로 바꿈
 				break;
 			}
-
 		}
 
+		// 도서 정보 출력		
 		System.out.println("");
 		System.out.println("*****도서 정보 출력하기******");
 		displayBookInfo(books);
 
 		scanner.close();
 	}
-
-	// (2)전달받은 배열을 모두 출력하는 메소드
-	// 코드작성
+	
+	// displayBookInfo 메소드
 	private static void displayBookInfo(Book[] books) {
 		for (int i = 0; i < books.length; i++) {
 			books[i].print();

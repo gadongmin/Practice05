@@ -38,15 +38,15 @@ public class Account {
 
 	// 메소드 - 일반
 	public void deposit(int pass) {
-		if(pass > 0) {
-			balance = balance + pass; 
+		if (pass > 0) {
+			balance = balance + pass;
 		}
 	}
 
 	public void withdraw(int pass) {
-		if(pass < balance) {
-			balance = balance - pass; 
-		}		
+		if (pass < balance) {
+			balance = balance - pass;
+		}
 	}
 
 	public void showBalance() {

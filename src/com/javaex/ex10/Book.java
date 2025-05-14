@@ -57,8 +57,8 @@ public class Book {
 	}
 
 	public void print() {
-		String state;
-		if (this.stateCode == 1) {
+		String state; // state 문자열 변수 설정 
+		if (this.stateCode == 1) { // stateCode 값이 1일때 재고있음 
 			state = "재고있음";
 		} else {
 			state = "대여중";
